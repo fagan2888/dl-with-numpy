@@ -18,3 +18,9 @@ class tanh():
         return (np.exp(2x) - 1) * (np.exp(2x) + 1)
     def gradient(self,x):
         return 1 - np.pow(self.__call__(x),2)
+
+class relu():
+    def __call__(self,x):
+        return np.where(x>=0,x,0)
+    def gradient(self,x):
+        return np.where(x>=0,1,0)
