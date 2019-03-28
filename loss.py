@@ -13,9 +13,9 @@ class MeanSquareLoss():
     def __init__(self):
          pass
     def loss(self,y_true,y_pred):
-        return np.power((y_true - y_pred), 2) / len(y_true)
+        return np.mean(np.power((y_true - y_pred), 2))
     def gradient(self, y_true, y_pred):
-        return -((2 * (y_true - y_pred)) / len(y_true))
+        return -(np.mean((2 * (y_true - y_pred))))
 
 class BinaryCrossEntropyLoss():
     def __init__(self): pass
