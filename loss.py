@@ -29,3 +29,12 @@ class BinaryCrossEntropyLoss():
         # Avoid division by zero
         y_pred = np.clip(y_pred, 1e-10, 1 - 1e-10)
         return - (y_true / y_pred) + (1 - y_true) / (1 - y_pred)
+
+class CategoricalCrossEntropy():
+    def __init__(self):
+        pass
+    def loss(self,y_true,y_pred):
+        y_pred = np.clip(y_pred, 1e-10, 1 - 1e-10)
+        return -np.sum(y_true * np.log(y_pred+1e-9)) / y_pred.shape[0]
+    def gradient(self,y_true,y_pred):
+        NotImplementedError()
