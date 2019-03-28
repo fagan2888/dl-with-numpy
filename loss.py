@@ -9,7 +9,7 @@ class SquareLoss(Loss):
     def gradient(self, y_true, y_pred):
         return -(y_true - y_pred)
 
-class MeanSquareLoss():
+class MeanSquareError():
     def __init__(self):
          pass
     def loss(self,y_true,y_pred):
@@ -37,4 +37,12 @@ class CategoricalCrossEntropy():
         y_pred = np.clip(y_pred, 1e-10, 1 - 1e-10)
         return -np.sum(y_true * np.log(y_pred+1e-9)) / y_pred.shape[0]
     def gradient(self,y_true,y_pred):
+        NotImplementedError()
+
+class MeanAbsoluteError():
+    def __init__(self):
+        pass
+    def loss(self,y_true,y_pred):
+        return np.mean(np.abs(y_pred - y_true))
+    def gradient():
         NotImplementedError()
