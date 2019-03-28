@@ -1,4 +1,4 @@
-# dl from scratch
+# dl with numpy
 
 ## About
 
