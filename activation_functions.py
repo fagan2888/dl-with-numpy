@@ -30,3 +30,22 @@ class LeakyReLu():
         return np.where(x>=0,x,0.01 * x)
     def gradient(self,x):
         return np.where(x>=0,1,0.01)
+
+class ELU():
+    def __init__(self,alpha = 0.01):
+        self.alpha = alpha
+    def __call__(self,x):
+        return np.where(x>=0,x,self.aplha * (np.exp(x) - 1))
+    def gradient(self,x):
+        return np.where(x>=0,1,self.__call__(x) + self.alpha)
+
+class SELU():
+    def __init__(self):
+        self.alpha = 1.67326
+        self.scale = 1.0507
+
+    def __call__(self, x):
+        return self.scale * np.where(x >= 0.0, x, self.alpha*(np.exp(x)-1))
+
+    def gradient(self, x):
+        return self.scale * np.where(x >= 0.0, 1, self.alpha * np.exp(x))
