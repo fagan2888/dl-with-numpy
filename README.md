@@ -12,6 +12,8 @@ Anyone who wants to contribute in any way is welcome to do so.
 As such there is no Contributing Guide, just the basics being :
 >
 > ***The implementation should be simple and easy to understand.*** 
+>
 > It is not a compulsion to add comments, I haven't, but if you feel like it'll help explain your code, please do so. 
+>
 > Create a branch with the name of the feature you want to add, code it, and then Pull Request. 
 >
